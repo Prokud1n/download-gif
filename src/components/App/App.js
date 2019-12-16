@@ -21,7 +21,7 @@ const App = () => {
         </div>
           <Switch>
             <Route path="/main">
-              <Main />
+              <Main/>
             </Route>
             <Route path="/history">
               <History />
