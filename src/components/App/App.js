@@ -16,11 +16,11 @@ const App = () => {
       <Router>
         <div>
         <div style={styles}>
-          <Link to="/Main">Главная</Link>
+          <Link to="/main">Главная</Link>
           <Link to="/history">История</Link>
         </div>
           <Switch>
-            <Route path="/Main">
+            <Route path="/main">
               <Main />
             </Route>
             <Route path="/history">

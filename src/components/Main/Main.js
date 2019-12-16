@@ -1,13 +1,13 @@
 import React from "react";
 import MainContainer from "./styles";
-import DownloadImage from "../DownloadImage/DownloadImage";
-import Button from "../Button/Button";
+import MainDownloadImage from "../MainDownloadImage/MainDownloadImage";
+
 const Main = () => {
     return (
         <div style={MainContainer}>
             <h2> Главная </h2>
-            <DownloadImage />
-            <Button />
+            <MainDownloadImage/>
+            <button>Загрузить</button>
         </div>
     );
 };
