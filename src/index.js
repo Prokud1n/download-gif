@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {applyMiddleware, createStore} from "redux";
-import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
 import { Provider } from 'react-redux'
 import './index.css';
 import App from './components/App/App';
 import pictureReducer from "./reducers/pictureReducer";
 import ErrorBoundary from "./components/Error/ErrorBoundary";
+import {watchFetchPicture} from "./actions/getPicture.action";
 
-let store = createStore(pictureReducer, applyMiddleware(thunk));
+const sagaMiddleware = createSagaMiddleware();
 
-console.log(store);
+let store = createStore(pictureReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(watchFetchPicture);
 
 const application = (
     <Provider store={store}>

@@ -1,14 +1,14 @@
 import React from "react";
 import HistoryDownloadImage from "../HistoryDownloadImage/HistoryDownloadImage";
-import MainContainer from "../Main/styles";
+import styles from "../Main/styles";
 import {connect} from "react-redux";
 
 const History = ({ historyImage }) => {
-    console.log(historyImage);
+    const fiveImage = historyImage.slice(0, 5);
     return (
-        <div style={MainContainer}>
+        <div style={styles.MainContainer}>
             <h2>История</h2>
-            {historyImage.map(url => (
+            {fiveImage.map(url => (
                 <HistoryDownloadImage url={url}/>
             ))
             }

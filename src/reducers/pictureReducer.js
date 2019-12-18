@@ -12,7 +12,7 @@ function pictureReducer(state = initialState, action) {
         case FETCH_PICTURE_START:
             return { ...state, requestStatus: REQUEST.LOADING };
         case FETCH_PICTURE_SUCCESS:
-            return { ...state, requestStatus: REQUEST.STILL, url: action.payload, historyImage: [...state.historyImage, action.payload] };
+            return { ...state, requestStatus: REQUEST.STILL, url: action.url, historyImage: [...state.historyImage, action.url] };
         case FETCH_PICTURE_ERROR:
             return { ...state, requestStatus: REQUEST.ERROR };
         default:

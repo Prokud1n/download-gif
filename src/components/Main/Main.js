@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
 
-import MainContainer from "./styles";
+import styles from "./styles";
 import MainDownloadImage from "../MainDownloadImage/MainDownloadImage";
-import fetchPicture from "../../actions/getPicture.action";
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
 import REQUEST from "../../constants/request";
+import {fetchPicture} from "../../actionCreators/fetchactions";
 
-const Main = ({ getPicture, url, requestStatus }) => {
+const Main = ({ url, requestStatus }) => {
+    const dispatch = useDispatch();
     useEffect(() => {
-        getPicture();
-    }, [getPicture]);
+        dispatch(fetchPicture());
+    }, [fetchPicture]);
 
-    const loading = requestStatus === REQUEST.STILL;
+    const loading = requestStatus === REQUEST.LOADING;
     return (
-        <div style={MainContainer}>
-            <h2> Главная </h2>
+        <div style={styles.MainContainer}>
+            <span style={styles.header}> Главная </span>
             <MainDownloadImage url={url}/>
-            {loading && <button onClick={getPicture}>Загрузить</button>}
+            <button disabled={loading} style={styles.button} onClick={() => dispatch(fetchPicture())}>Загрузить</button>
         </div>
     );
 };
@@ -25,7 +26,6 @@ const mapStateToProps = (state) => ({
     requestStatus: state.requestStatus,
 });
 const mapDispatchToProps = {
-    getPicture: fetchPicture,
 };
 
 export default connect(

@@ -20,6 +20,7 @@ const color = {
 };
 const display = {
     display: "flex",
+
 };
 export default {
     ...display,
