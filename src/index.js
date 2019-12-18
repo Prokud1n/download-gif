@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {applyMiddleware, createStore} from "redux";
 import createSagaMiddleware from "redux-saga";
 import { Provider } from 'react-redux'
-import './index.css';
+
 import App from './components/App/App';
 import pictureReducer from "./reducers/pictureReducer";
 import ErrorBoundary from "./components/Error/ErrorBoundary";

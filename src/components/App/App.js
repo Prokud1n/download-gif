@@ -12,24 +12,24 @@ import History from "../History/History";
 import styles from "./styles";
 
 const App = () => {
-  return (
-      <Router>
-        <div>
-        <div style={styles}>
-          <Link to="/main">Главная</Link>
-          <Link to="/history">История</Link>
-        </div>
-          <Switch>
-            <Route path="/main">
-              <Main/>
-            </Route>
-            <Route path="/history">
-              <History />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <div style={styles}>
+                    <Link to="/main">Главная</Link>
+                    <Link to="/history">История</Link>
+                </div>
+                <Switch>
+                    <Route path="/main">
+                        <Main/>
+                    </Route>
+                    <Route path="/history">
+                        <History />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 
 };
 

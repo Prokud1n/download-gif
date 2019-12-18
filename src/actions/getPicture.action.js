@@ -8,19 +8,6 @@ export function* watchFetchPicture() {
     yield takeEvery(FETCH_PICTURE, fetchPictureAsync);
 }
 
-// function fetchPicture() {
-//     return async (dispatch) => {
-//         dispatch({ type: FETCH_PICTURE_START });
-//         try {
-//             const response = yield call(axios.get(APIPICTURE), response.data.data.image_url);
-//             const payload = response.data.data.image_url;
-//
-//             dispatch({ type: FETCH_PICTURE_SUCCESS, payload });
-//         } catch (error) {
-//             dispatch({ type: FETCH_PICTURE_ERROR });
-//         }
-//     }
-// }
 export function* fetchPictureAsync() {
     try {
         yield put(fetchPictureStart());

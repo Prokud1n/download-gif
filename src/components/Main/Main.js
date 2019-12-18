@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import styles from "./styles";
-import MainDownloadImage from "../MainDownloadImage/MainDownloadImage";
+import MainDownloadImage from "./MainDownloadImage/MainDownloadImage";
 import {connect, useDispatch} from "react-redux";
 import REQUEST from "../../constants/request";
 import {fetchPicture} from "../../actionCreators/fetchactions";
