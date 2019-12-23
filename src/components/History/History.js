@@ -1,32 +1,18 @@
-import React, { useState } from "react";
-import Pagination from "react-js-pagination";
-
-import HistoryDownloadImage from "./HistoryDownloadImage/HistoryDownloadImage";
-import styles from "../Main/styles";
+import React from "react";
 import {connect} from "react-redux";
+
 import {getHistoryImage} from "../../selectors/HistorySelector";
+import styles from "./styles";
+import {deleteImage} from "../../actionCreators/fetchactions";
+import Pagination from "../Pagination/Pagination"
 
-const History = ({ historyImage }) => {
-    const [activePage, setActivePage] = useState(1);
-    const fiveImage = historyImage.slice(0, 5);
-
-    const handlePageChange = (pageNumber) => {
-        setActivePage(pageNumber);
-    };
+const History = ({ historyImage, handleDeleteFile }) => {
     return (
-        <div style={styles.MainContainer}>
-            <h2>История</h2>
-            {fiveImage.map(url => (
-                <HistoryDownloadImage url={url}/>
-            ))
-            }
-            <Pagination
-                activePage={activePage}
-                itemsCountPerPage={10}
-                totalItemsCount={450}
-                pageRangeDisplayed={5}
-                onChange={handlePageChange}
-            />
+        <div style={styles.HistoryContainer}>
+            <span style={styles.header}> История </span>
+            <div style={styles.imageContainer}>
+                <Pagination historyImage={historyImage} handleDeleteFile={handleDeleteFile}/>
+            </div>
         </div>
     );
 };
@@ -34,7 +20,9 @@ const History = ({ historyImage }) => {
 const mapStateToProps = (state) => ({
     historyImage: getHistoryImage(state),
 });
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+    handleDeleteFile: deleteImage,
+};
 
 export default connect(
     mapStateToProps, mapDispatchToProps

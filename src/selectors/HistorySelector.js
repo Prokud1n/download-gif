@@ -1,6 +1,9 @@
 import {createSelector} from "reselect";
 
-const historyImage = (state) => state.historyImage;
+const historyImage = (state) => {
+    const localState = state.get("picture");
+    return localState.get("historyImage");
+};
 
 export const getHistoryImage = createSelector(
     [historyImage],

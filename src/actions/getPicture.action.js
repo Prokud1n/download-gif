@@ -14,8 +14,12 @@ export function* fetchPictureAsync() {
         const data = yield call(() => {
             return axios.get(APIPICTURE);
         });
-        console.log(data.data.data.image_url);
-        yield put(fetchPictureSuccess(data.data.data.image_url));
+        const { image_url: url, title, import_datetime: importTime } = data.data.data;
+        yield put(fetchPictureSuccess({
+            url,
+            title,
+            importTime,
+        }));
     } catch (error) {
         yield put(fetchPictureError());
     }

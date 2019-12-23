@@ -4,6 +4,24 @@ const historyImage = {
     alignSelf: "center",
     marginBottom: "30px",
 };
+
+const label = {
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: "27px",
+};
+
+const imageContainer = {
+    display: "flex",
+};
+
+const deletePicture = {
+    cursor: "pointer",
+};
+
 export default {
     historyImage,
+    imageContainer,
+    label,
+    deletePicture,
 }

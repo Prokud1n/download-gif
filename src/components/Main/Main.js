@@ -11,7 +11,7 @@ const Main = ({ url, requestStatus }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchPicture());
-    }, [fetchPicture]);
+    }, [dispatch]);
 
     const isLoading = requestStatus === REQUEST.LOADING;
     return (
@@ -26,8 +26,7 @@ const mapStateToProps = (state) => ({
     url: getUrl(state),
     requestStatus: getRequestStatus(state),
 });
-const mapDispatchToProps = {};
 
 export default connect(
-    mapStateToProps, mapDispatchToProps
+    mapStateToProps, {}
 )(Main);

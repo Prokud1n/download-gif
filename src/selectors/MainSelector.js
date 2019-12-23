@@ -1,7 +1,13 @@
 import {createSelector} from "reselect";
 
-const url = (state) => state.url;
-const requestStatus = (state) => state.requestStatus;
+const url = (state) => {
+    const localState = state.get("picture");
+    return localState.get("url");
+};
+const requestStatus = (state) => {
+    const localState = state.get("picture");
+    return localState.get("requestStatus");
+};
 
 export const getUrl = createSelector(
     [url],
