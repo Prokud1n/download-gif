@@ -15,16 +15,9 @@ const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({ picture: pictureReducer });
 const initialState = Immutable.Map();
 
-//let store = createStore(pictureReducer, applyMiddleware(sagaMiddleware));
-
 let store = createStore(rootReducer, initialState, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(watchFetchPicture);
-
-const styleLink = document.createElement("link");
-styleLink.rel = "stylesheet";
-styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
-document.head.appendChild(styleLink);
 
 const application = (
     <Provider store={store}>

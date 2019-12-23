@@ -5,7 +5,7 @@ const img = {
     textAlign: "center",
 };
 const loading = {
-    height: "238px",
+    height: "220px",
 };
 
 export default {
