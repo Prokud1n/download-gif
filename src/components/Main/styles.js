@@ -18,6 +18,7 @@ const button = {
     opacity: "1",
     alignSelf: "center",
     marginTop: "31px",
+    color: "#FFFFFF"
 };
 const header = {
     marginLeft: "31px",

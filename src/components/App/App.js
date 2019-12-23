@@ -15,9 +15,9 @@ const App = () => {
     return (
         <Router>
             <div>
-                <div style={styles}>
-                    <Link to="/main">Главная</Link>
-                    <Link to="/history">История</Link>
+                <div style={styles.LinkContainer}>
+                    <Link to="/main" style={styles.Link}>Главная</Link>
+                    <Link to="/history" style={styles.Link}>История</Link>
                 </div>
                 <Switch>
                     <Route path="/main">

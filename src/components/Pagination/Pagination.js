@@ -41,6 +41,10 @@ const Pagination = ({ historyImage, handleDeleteFile }) => {
         )
     );
 
+    if (!renderHistoryImage.length && currentPage !== 1) {
+        setCurrentPage(currentPage - 1);
+    }
+
     return (
         <div>
             <ul style={styles.historyImage}>
