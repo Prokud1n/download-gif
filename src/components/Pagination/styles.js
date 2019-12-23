@@ -1,7 +1,12 @@
-const ul = {
+const pageNumber = {
     listStyle: "none",
     display: "flex",
     marginLeft: "100px",
+};
+
+const historyImage = {
+    marginTop: "0px",
+    minHeight: "472px"
 };
 
 const li = {
@@ -11,6 +16,7 @@ const li = {
     cursor: "pointer",
 };
 export default {
-    ul,
+    pageNumber,
+    historyImage,
     li
 };

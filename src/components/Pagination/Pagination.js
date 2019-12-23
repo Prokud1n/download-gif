@@ -43,10 +43,10 @@ const Pagination = ({ historyImage, handleDeleteFile }) => {
 
     return (
         <div>
-            <ul style={{marginTop: "0px", minHeight: "472px"}}>
+            <ul style={styles.historyImage}>
                 {renderHistoryImage}
             </ul>
-            <ul style={styles.ul}>
+            <ul style={styles.pageNumber}>
                 {renderPageNumbers}
             </ul>
         </div>
